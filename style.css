@@ -318,9 +318,9 @@ body.dark .search-field i{
    cursor: pointer;
  }
 
-/*footer*/
+/*footer
 
-/* .foot{
+.foot{
     display: flex;
     flex-wrap: wrap;
 }
@@ -334,7 +334,7 @@ body.dark .search-field i{
     font-weight: 500;
    
 }
-/*.foot h3::before{
+.foot h3::before{
     content: '';
     
 }
@@ -429,8 +429,8 @@ font-weight: bolder;
     padding: 2rem;
     background-color: rgb(6, 92, 23);
     
-} */
-/* .things ul li {
+} 
+ .things ul li {
     font-size: 16px;
     font-weight: bold;
     color: rgb(216, 230, 230);
