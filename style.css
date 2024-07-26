@@ -362,12 +362,12 @@ footer{
 }
 .socialIcons a i{
   font-size: 2em;
-  color: black;
+  color: #05753d;
   opacity: 0,9;
 }
 /* Hover affect on social media icon */
 .socialIcons a:hover{
-  background-color: #111;
+  background-color: #05753d;
   transition: 0.5s;
 }
 .socialIcons a:hover i{
@@ -395,7 +395,7 @@ footer{
   opacity: 1;
 }
 .footerBottom{
-  background-color: #000;
+  background-color: #05311b;
   padding: 20px;
   text-align: center;
 }
