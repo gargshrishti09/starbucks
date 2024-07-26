@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3313ff400a.js" crossorigin="anonymous"></script>
+     
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #05753d;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+body.dark nav{
+    border: 1px solid #393838;
+}
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.logonavLogo img{
+   height:78px;
+   width: 80px;
+}
+.logo img{
+  height: 40%;
+  width:40%;
+}
+.menu .logo-toggle{
+    display: none;
+}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color:rgb(241, 237, 237);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: rgb(222, 215, 215);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+body.dark .search-field input{
+    color: var(--text-color);
+}
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+body.dark .search-field i{
+    color: var(--text-color);
+}
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+    nav.active .menu{
+        left: -0%;
+    }
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+body, input,textarea, a{
+    font-family: 'Roboto', sans-serif;
+}
+#section-wrapper{
+    width: 100%;
+    padding: 10px;
+}
+.box-wrapper{
+    position: relative;
+    display: table;
+    width:1100px;
+    margin:auto;
+    margin-top:35px;
+    border-radius: 30px;
+}
+.info-wrap{
+    width:35%;
+    height: 551px;
+    padding: 40px;
+    float: left;
+    display: block;
+    border-radius: 30px 0px 0px 30px;
+    background: linear-gradient(144deg, rgb(12, 150, 67) 0%, rgb(10, 147, 52) 49%);
+    color: #fff;
+}
+.info-title{
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+.info-sub-title{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 17px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+}
+.info-details {
+    list-style: none;
+    margin: 60px 0px;
+}
+.info-details li {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #fff;
+}
+.info-details li i {
+    background:#47dc16 ;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.info-details li a {
+    color: #fff;
+    text-decoration: none;
+}
+.info-details li a:hover {
+    color: #0f0f0d;
+}
+.social-icons {
+    list-style: none;
+    text-align: center;
+    margin: 20px 0px;
+}
+.social-icons li {
+    display: inline-block;
+}
+.social-icons li i {
+    background: #47dc16;
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 22%;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.social-icons li i:hover {
+    background: #fff;
+    color: #000000;
+}
+.form-wrap{
+    width:65%;
+    float: right;
+    padding:40px 25px 35px 25px;
+    border-radius: 0px 30px 30px 0px;
+    background: #ecf0f3;
+}
+.form-title{
+    text-align: left;
+    margin-left: 23px;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+.form-fields{
+    display: table;
+    width: 100%;
+    padding: 15px 5px 5px 5px;
+}
+.form-fields input,
+.form-fields textarea{
+    border: none;
+    outline:none;
+    background: none;
+    font-size: 18px;
+    color:#555;
+    padding: 20px 10px 20px 5px;
+    width:100%
+}
+.form-fields textarea{
+    height: 150px;
+    resize: none;
+}
+.form-group{
+    width: 46%;
+    float: left;
+    padding: 0px 30px;
+    margin: 14px 12px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+.form-fields .form-group:last-child {
+    width: 96%;
+}
+.submit-button{
+    width: 96%;
+    height: 60px;
+    margin: 0px 12px;
+    border-radius: 30px;
+    font-size: 20px;;
+    font-weight: 700;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    color:#fff;
+    text-align: center;
+    background: #068236;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: .5s;
+}
+.submit-button:hover{
+    background: #0a943f;
+}
+/* Responsive css */
+@media only screen and (max-width: 767px) {
+    .box-wrapper{
+        width: 100%;
+    }
+    .info-wrap,
+    .form-wrap{
+        width: 100%;
+        height: inherit;
+        float: none;  
+    }
+    .info-wrap{
+        border-radius: 30px 30px 0px 0px;
+    }
+    .form-wrap{
+        border-radius: 0px 0px 30px 30px;
+    }
+    .form-group{
+        width: 100%;
+        float: none;
+        margin: 25px 0px;
+    }
+    .form-fields .form-group:last-child, 
+    .submit-button{
+        width: 100%;
+    }
+    .submit-button{
+        margin: 10px 0px;
+    }
+   
+}
+.foot{
+    display: flex;
+    flex-wrap: wrap;
+}
+.foot h3{
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+    background-color: rgb(9, 149, 67);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+   
+}
+/*.foot h3::before{
+    content: '';
+    
+}*/
+.foot ul{
+    list-style-type: none;
+}
+.things{
+    width: 33%;
+font-weight: bolder;
+    padding: 2rem;
+    background-color: rgb(6, 92, 23);
+    
+}
+.things ul li {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(216, 230, 230);
+    text-decoration: none;
+    font-weight: 300;
+}
+.things li:hover{
+    color: rgb(14, 168, 163);
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-5px);
+    transition: 0.1s all ease-in-out;
+    clip-path: circle(500px at center);
+}
+ 
+    </style>
+
+</head>
+<body><nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <span class="logonavLogo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+            <div class="searchBox">
+               <div class="searchToggle">
+                <i class='bx bx-x cancel'></i>
+                <i class='bx bx-search search'></i>
+               </div>
+                <div class="search-field">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+const body = document.querySelector("body"),
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light"),
+  searchToggle = document.querySelector(".searchToggle"),
+  sidebarOpen = document.querySelector(".sidebarOpen"),
+  siderbarClose = document.querySelector(".siderbarClose");
+  let getMode = localStorage.getItem("mode");
+      if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+      }
+// js code to toggle dark and light mode
+  modeToggle.addEventListener("click" , () =>{
+    modeToggle.classList.toggle("active");
+    body.classList.toggle("dark");
+    // js code to keep user selected mode even page refresh or file reopen
+    if(!body.classList.contains("dark")){
+        localStorage.setItem("mode" , "light-mode");
+    }else{
+        localStorage.setItem("mode" , "dark-mode");
+    }
+  });
+// js code to toggle search box
+    searchToggle.addEventListener("click" , () =>{
+    searchToggle.classList.toggle("active");
+  });
+
+  
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+nav.classList.add("active");
+});
+body.addEventListener("click" , e =>{
+let clickedElm = e.target;
+if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+    nav.classList.remove("active");
+}
+});
+</script><br><br><br><hr>
+<section id="section-wrapper">
+    <div class="box-wrapper">
+        <div class="info-wrap">
+            <h2 class="info-title">Contact Information</h2>
+            <h3 class="info-sub-title">Fill up the form and our Team will get back to you within 24 hours</h3>
+            <ul class="info-details">
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Phone:</span> <a href="tel:+ 1235 2355 98">+ 1235 2355 98</a>
+                </li>
+                <li>
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Email:</span> <a href="mailto:info@yoursite.com">star@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-globe"></i>
+                    <span>Website:</span> <a href="#">star.com</a>
+                </li>
+            </ul>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/cadec.pgdav?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com/cadec.pgdav?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/cadec-pgdav/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://chat.whatsapp.com/EYRVfAsSpbYKPZAmgZHguu"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+        <div class="form-wrap">
+            <form action="#" method="POST">
+                <h2 class="form-title">Send us a message</h2>
+                <div class="form-fields">
+                    <div class="form-group">
+                        <input type="text" class="fname" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="lname" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="email" placeholder="Mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="phone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="" placeholder="Write your message"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Send Message" class="submit-button">
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="foot">
+        <div class="things">
+            <h3>About us</h3>
+            <ul>
+                <li>Our company</li>
+                <li>Heritage</li>
+                <li>coffee house</li>
+                
+            </ul>
+        </div>
+<div class="things">
+<h3>Quick links</h3>
+<ul>
+    <li>Delivery</li>
+    <li>Season's gifting</li>
+    <li>Costumer service</li>
+</ul>
+</div>
+<div class="things">
+<h3>Social Media</h3>
+<ul>
+    <li><i class="fa-brands fa-instagram"></i></li>
+    <li><i class="fa-brands fa-facebook"></i></li>
+    <li><i class="fa-brands fa-twitter"></i></li>
+</ul>
+</div>
+    </div>
+</footer>
+            
+</body>
+</html>
