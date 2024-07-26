@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Payment getway form design in Hindi</title>
+	<link rel="stylesheet" type="text/css" href="payment.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3313ff400a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="payment.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+	<nav>
+		<div class="nav-bar">
+			<i class='bx bx-menu sidebarOpen' ></i>
+			<span class="logonavLogo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+			<div class="menu">
+				<div class="logo-toggle">
+					<span class="logo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+					<i class='bx bx-x siderbarClose'></i>
+				</div>
+				<ul class="nav-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="payment.html">Payment</a></li>
+					<li><a href="menu.html">Menu</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="darkLight-searchBox">
+				<div class="dark-light">
+					<i class='bx bx-moon moon'></i>
+					<i class='bx bx-sun sun'></i>
+				</div>
+				<div class="searchBox">
+				   <div class="searchToggle">
+					<i class='bx bx-x cancel'></i>
+					<i class='bx bx-search search'></i>
+				   </div>
+					<div class="search-field">
+						<input type="text" placeholder="Search...">
+						<i class='bx bx-search'></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<script>
+	const body = document.querySelector("body"),
+	  nav = document.querySelector("nav"),
+	  modeToggle = document.querySelector(".dark-light"),
+	  searchToggle = document.querySelector(".searchToggle"),
+	  sidebarOpen = document.querySelector(".sidebarOpen"),
+	  siderbarClose = document.querySelector(".siderbarClose");
+	  let getMode = localStorage.getItem("mode");
+		  if(getMode && getMode === "dark-mode"){
+			body.classList.add("dark");
+		  }
+	// js code to toggle dark and light mode
+	  modeToggle.addEventListener("click" , () =>{
+		modeToggle.classList.toggle("active");
+		body.classList.toggle("dark");
+		// js code to keep user selected mode even page refresh or file reopen
+		if(!body.classList.contains("dark")){
+			localStorage.setItem("mode" , "light-mode");
+		}else{
+			localStorage.setItem("mode" , "dark-mode");
+		}
+	  });
+	// js code to toggle search box
+		searchToggle.addEventListener("click" , () =>{
+		searchToggle.classList.toggle("active");
+	  });
+	
+	  
+	//   js code to toggle sidebar
+	sidebarOpen.addEventListener("click" , () =>{
+	nav.classList.add("active");
+	});
+	body.addEventListener("click" , e =>{
+	let clickedElm = e.target;
+	if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+		nav.classList.remove("active");
+	}
+	});
+	</script><br><br><br><hr>
+<header>
+	<div class="container">
+		<div class="left">
+			<h3>BILLING ADDRESS</h3>
+			<form>
+				Full name
+				<input type="text" name="" placeholder="Enter name">
+				Email
+				<input type="text" name="" placeholder="Enter email">
+
+				Address
+				<input type="text" name="" placeholder="Enter address">
+				
+				City
+				<input type="text" name="" placeholder="Enter City">
+				<div id="zip">
+					<label>
+						State
+						<select>
+							<option>Choose State..</option>
+							<option>Rajasthan</option>
+							<option>Harayana</option>
+							<option>Uttar Pradesh</option>
+							<option>Madhya Pradesh</option>
+						</select>
+					</label>
+						<label>
+						Zip code
+						<input type="number" name="" placeholder="Zip code">
+					</label>
+				</div>
+			</form>
+		</div>
+		<div class="right">
+			<h3>PAYMENT</h3>
+			<form>
+				Accepted Card <br>
+				<img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\13 star.png" width="80" height="50">
+				<img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\14 star.png" width="85" height="50">
+				<br><br>
+
+				Credit card number
+			<input type="text" name="" placeholder="Enter card number">
+				
+				Exp month
+				<input type="text" name="" placeholder="Enter Month">
+				<div id="zip">
+					<label>
+						Exp year
+						<select>
+							<option>Choose Year..</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>
+							<option>2025</option>
+						</select>
+					</label>
+						<label>
+						CVV
+						<input type="number" name="" placeholder="CVV">
+					</label>
+				</div>
+			</form>
+			<input type="submit" name="" value="Proceed to Checkout">
+		</div>
+	</div>
+</header>
+<footer>
+	<div class="foot">
+		<div class="things">
+			<h3>About us</h3>
+			<ul>
+				<li>Our company</li>
+				<li>Heritage</li>
+				<li>coffee house</li>
+				
+			</ul>
+		</div>
+<div class="things">
+<h3>Quick links</h3>
+<ul>
+	<li>Delivery</li>
+	<li>Season's gifting</li>
+	<li>Costumer service</li>
+</ul>
+</div>
+<div class="things">
+<h3>Social Media</h3>
+<ul>
+	<li><i class="fa-brands fa-instagram"></i></li>
+	<li><i class="fa-brands fa-facebook"></i></li>
+	<li><i class="fa-brands fa-twitter"></i></li>
+</ul>
+</div>
+	</div>
+</body>
+</html>
