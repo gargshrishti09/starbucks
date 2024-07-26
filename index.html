@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3313ff400a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body><nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <span class="logonavLogo"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg" alt="logo"> </span>
+        
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="final.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+            <div class="searchBox">
+               <div class="searchToggle">
+                <i class='bx bx-x cancel'></i>
+                <i class='bx bx-search search'></i>
+               </div>
+                <div class="search-field">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+const body = document.querySelector("body"),
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light"),
+  searchToggle = document.querySelector(".searchToggle"),
+  sidebarOpen = document.querySelector(".sidebarOpen"),
+  siderbarClose = document.querySelector(".siderbarClose");
+  let getMode = localStorage.getItem("mode");
+      if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+      }
+// js code to toggle dark and light mode
+  modeToggle.addEventListener("click" , () =>{
+    modeToggle.classList.toggle("active");
+    body.classList.toggle("dark");
+    // js code to keep user selected mode even page refresh or file reopen
+    if(!body.classList.contains("dark")){
+        localStorage.setItem("mode" , "light-mode");
+    }else{
+        localStorage.setItem("mode" , "dark-mode");
+    }
+  });
+// js code to toggle search box
+    searchToggle.addEventListener("click" , () =>{
+    searchToggle.classList.toggle("active");
+  });
+
+  
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+nav.classList.add("active");
+});
+body.addEventListener("click" , e =>{
+let clickedElm = e.target;
+if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+    nav.classList.remove("active");
+}
+});
+</script><br><br><br><hr>
+<div class="imp">
+    <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\2 star.jpg">
+</div>
+            <div class="main">
+            <!--cards -->
+           <div class="card">
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\3 star.jpg">
+           </div>
+           <div class="title">
+            <h1>Cappu</h1>
+           </div>
+           <div class="des">
+            <h4>RS 240/- (Tall)</h4><br>
+            Perfect balance of espresso, steamed milk and foam. 
+           </div>
+           </div>
+           <!--cards -->
+           <div class="card">
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\4 star.jpg">
+           </div>
+           <div class="title">
+            <h1>White Choco
+           </h1>
+           </div>
+           <div class="des">
+              <h4>RS 365/-(Tall)</h4><br>
+              A shot of espresso is combined with a chocolate.
+              </div>
+           </div>
+           <!--cards -->
+           <div class="card">
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\5 star.jpg">
+           </div>
+           <div class="title">
+            <h1>Cafe Americano
+           </h1>
+           </div>
+           <div class="des">
+            <h4>RS 240/-(Tall)</h4><br>
+            An americano is just water and espress.
+           </div>
+           </div>
+           <!--cards -->
+           <div class="card">
+           
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\6 star.jpg">
+           </div>
+           <div class="title">
+            <h1>
+           Vanilla Latte</h1>
+           </div>
+           <div class="des">
+            <h4>RS 250/-(Tall)</h4><br>
+            A latte with vanilla flavors with milk. 
+           </div>
+           </div>
+           <!--cards -->
+           <div class="card">
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\7 star.jpg">
+           </div>
+           <div class="title">
+            <h1>
+           Java Chip </h1>
+           </div>
+           <div class="des">
+            <h4>RS 275/-(Tall)</h4><br>
+            Blend mocha sauce and Frappuccino® chips with coffee, milk and ice.
+           </div>
+           </div>
+           <!--cards -->
+           <div class="card">
+           
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\8 star.jpg">
+           </div>
+           <div class="title">
+            <h1>
+           Hot Chocolate</h1>
+           </div>
+           <div class="des">
+            <h4>RS 180/-(Picco)</h4><br>
+            Steamed milk with chocolate-flavoured syrups. Topped with sweetened.
+           </div>
+           </div>
+           <!--cards -->
+           
+           <div class="card">
+           
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\9 star.jpg">
+           </div>
+           <div class="title">
+            <h1>
+           Caramel shake</h1>
+           </div>
+           <div class="des">
+            <h4> RS 280/-(Tall)</h4><br>
+            Caramel syrup meets coffee, milk for a rendezvous in the blender.
+           </div>
+           </div>
+           <!--cards -->
+           
+           
+           <div class="card">
+           
+           <div class="image">
+              <img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\10 star.jpg">
+           </div>
+           <div class="title">
+            <h1>
+           Pumpkin Spice Latte </h1>
+           </div>
+           <div class="des">
+            <h4>RS 200/-(Tall)</h4><br>
+            A coffee drink made with a mix of traditional fall spice flavors. 
+           </div>
+           </div>
+           <!--cards -->
+           
+           
+           
+           </div>
+       <footer>
+        <div class="foot">
+            <div class="things">
+                <h3>About us</h3>
+                <ul>
+                    <li>Our company</li>
+                    <li>Heritage</li>
+                    <li>coffee house</li>
+                    
+                </ul>
+            </div>
+<div class="things">
+    <h3>Quick links</h3>
+    <ul>
+        <li>Delivery</li>
+        <li>Season's gifting</li>
+        <li>Costumer service</li>
+    </ul>
+</div>
+<div class="things">
+    <h3>Social Media</h3>
+    <ul>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-twitter"></i></li>
+    </ul>
+</div>
+        </div>
+    </footer>
+                
+</body>
+</html>
