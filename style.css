@@ -347,6 +347,7 @@ footer{
 .footerContainer{
   width: 100%;
   padding: 70px 30px 20px ;
+     background-color: #05753d;
 }
 .socialIcons{
   display: flex;
