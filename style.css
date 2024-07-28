@@ -432,28 +432,6 @@ footer{
       margin: 4px;
   }
 }
-/* .things{ 
-        
-    width: 33%;
-font-weight: bolder;
-    padding: 2rem;
-    background-color: rgb(6, 92, 23);
+
     
-} 
- .things ul li {
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(216, 230, 230);
-    text-decoration: none;
-    font-weight: 300;
-}
-.things li:hover{
-    color: rgb(14, 168, 163);
-    left: 0;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-5px);
-    transition: 0.1s all ease-in-out;
-    clip-path: circle(500px at center);
-} */
  
