@@ -322,7 +322,7 @@ img {
   height: auto;
 }
 
-/*=============== CARD ===============*/
+/*=============== CARD ===============
 .containerr {
   display: grid;
   place-items: center;
@@ -384,7 +384,7 @@ img {
   text-decoration: underline;
 }
 
-/* Naming animations in hover */
+Nming animations in hover 
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -403,7 +403,7 @@ img {
   animation: remove-data 1s forwards;
 }
 
-/* Card animation */
+ Card animation 
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -442,7 +442,7 @@ img {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
+/* For small devices 
 @media screen and (max-width: 340px) {
   .containerr {
     margin-inline: 1rem;
@@ -454,7 +454,7 @@ img {
   }
 }
 
-/* For medium devices */
+/* For medium devices 
 @media screen and (min-width: 768px) {
   .card__containerr {
     grid-template-columns: repeat(2, 1fr);
@@ -462,7 +462,7 @@ img {
   }
 }
 
-/* For large devices */
+/* For large devices 
 @media screen and (min-width: 1120px) {
   .containerr {
     height: 100vh;
@@ -516,7 +516,7 @@ img {
    color: white;
    transition: .5s;
    cursor: pointer;
- } */
+ }
 
 /*footer
 
@@ -541,6 +541,93 @@ img {
 .foot ul{
     list-style-type: none;
 }*/
+.best{
+    background-color: #05753d;
+    color: #E4E9F7;
+    font-family: serif;
+    font-size: 90px;
+    text-align: center;
+   }
+   main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   }
+   section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    width: 1100px;
+   }
+   section .card{
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+   }
+   section .card .box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+    box-shadow: 2px 2px 20px black
+   }
+   section .card:hover .box{
+    transform: rotateY(180deg);
+   }
+   section .card .box .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   }
+   section .card .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+   section .card .box .contentbx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+   }
+   section .card .box .contentbx div{
+    transform-style: preserve-3d;
+    padding: 20px;
+    background: linear-gradient(45deg,#147741,#114614);
+    transform: translateZ(100px);
+   }
+   section .card .box .contentbx div h2{
+    color: rgb(239, 238, 186);
+    font-size: 20px;
+    letter-spacing: 1px;
+   }
+   section .card .box .contentbx div p{
+    color: aliceblue;
+    font-size: 16px;
+   
+   }
 footer{
   background-color: #05753d;
 }
