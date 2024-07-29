@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/3313ff400a.js" crossorigin="anonymous"></script>
-     
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-
+ <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <nav>
   <div class="nav-bar">
@@ -48,45 +45,7 @@
       </div>
   </div>
 </nav>
-<script>
-const body = document.querySelector("body"),
-nav = document.querySelector("nav"),
-modeToggle = document.querySelector(".dark-light"),
-searchToggle = document.querySelector(".searchToggle"),
-sidebarOpen = document.querySelector(".sidebarOpen"),
-siderbarClose = document.querySelector(".siderbarClose");
-let getMode = localStorage.getItem("mode");
-    if(getMode && getMode === "dark-mode"){
-      body.classList.add("dark");
-    }
-// js code to toggle dark and light mode
-modeToggle.addEventListener("click" , () =>{
-  modeToggle.classList.toggle("active");
-  body.classList.toggle("dark");
-  // js code to keep user selected mode even page refresh or file reopen
-  if(!body.classList.contains("dark")){
-      localStorage.setItem("mode" , "light-mode");
-  }else{
-      localStorage.setItem("mode" , "dark-mode");
-  }
-});
-// js code to toggle search box
-  searchToggle.addEventListener("click" , () =>{
-  searchToggle.classList.toggle("active");
-});
-
-
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click" , () =>{
-nav.classList.add("active");
-});
-body.addEventListener("click" , e =>{
-let clickedElm = e.target;
-if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-  nav.classList.remove("active");
-}
-});
-</script><br><br><br><hr><hr>
+<br><br><br><hr><hr>
 <body>
     <div class="heading">
     <img src="11 star.jpeg"><br><br>
@@ -132,34 +91,57 @@ In addition to drinks and food, many stores carry Starbucks' official merchandis
 </div>
 </section>
 <footer>
-  <div class="foot">
-      <div class="things">
-          <h3>About us</h3>
-          <ul>
-              <li>Our company</li>
-              <li>Heritage</li>
-              <li>coffee house</li>
-              
-          </ul>
-      </div>
-<div class="things">
-<h3>Quick links</h3>
-<ul>
-  <li>Delivery</li>
-  <li>Season's gifting</li>
-  <li>Costumer service</li>
-</ul>
-</div>
-<div class="things">
-<h3>Social Media</h3>
-<ul>
-  <li><i class="fa-brands fa-instagram"></i></li>
-  <li><i class="fa-brands fa-facebook"></i></li>
-  <li><i class="fa-brands fa-twitter"></i></li>
-</ul>
-</div>
-  </div>
-</footer>
-          
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            </div>
+            <div class="footerBottom">
+              <p>Copyright &copy;2024; Designed by <span class="designer">shrishti</span></p>
+          </div>
+      </footer>
+   <script>
+const body = document.querySelector("body"),
+nav = document.querySelector("nav"),
+modeToggle = document.querySelector(".dark-light"),
+searchToggle = document.querySelector(".searchToggle"),
+sidebarOpen = document.querySelector(".sidebarOpen"),
+siderbarClose = document.querySelector(".siderbarClose");
+let getMode = localStorage.getItem("mode");
+    if(getMode && getMode === "dark-mode"){
+      body.classList.add("dark");
+    }
+// js code to toggle dark and light mode
+modeToggle.addEventListener("click" , () =>{
+  modeToggle.classList.toggle("active");
+  body.classList.toggle("dark");
+  // js code to keep user selected mode even page refresh or file reopen
+  if(!body.classList.contains("dark")){
+      localStorage.setItem("mode" , "light-mode");
+  }else{
+      localStorage.setItem("mode" , "dark-mode");
+  }
+});
+// js code to toggle search box
+  searchToggle.addEventListener("click" , () =>{
+  searchToggle.classList.toggle("active");
+});
+
+
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+nav.classList.add("active");
+});
+body.addEventListener("click" , e =>{
+let clickedElm = e.target;
+if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+  nav.classList.remove("active");
+}
+});
+</script>       
 </body>
 </html>
