@@ -1,185 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Responsive Payment getway form design in Hindi</title>
-	<link rel="stylesheet" type="text/css" href="payment.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="cardsss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/3313ff400a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="payment.css"> 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   </head>
 <body>
-	<nav>
-		<div class="nav-bar">
-			<i class='bx bx-menu sidebarOpen' ></i>
-			<span class="logonavLogo"><a href="#"><img src="1 star.jpg"></a></span>
-			<div class="menu">
-				<div class="logo-toggle">
-					<span class="logo"><a href="#"><img src="1 star.jpg"></a></span>
-					<i class='bx bx-x siderbarClose'></i>
-				</div>
-				<ul class="nav-links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="payment.html">Payment</a></li>
-					<li><a href="menu.html">Menu</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-			<div class="darkLight-searchBox">
-				<div class="dark-light">
-					<i class='bx bx-moon moon'></i>
-					<i class='bx bx-sun sun'></i>
-				</div>
-				<div class="searchBox">
-				   <div class="searchToggle">
-					<i class='bx bx-x cancel'></i>
-					<i class='bx bx-search search'></i>
-				   </div>
-					<div class="search-field">
-						<input type="text" placeholder="Search...">
-						<i class='bx bx-search'></i>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<script>
-	const body = document.querySelector("body"),
-	  nav = document.querySelector("nav"),
-	  modeToggle = document.querySelector(".dark-light"),
-	  searchToggle = document.querySelector(".searchToggle"),
-	  sidebarOpen = document.querySelector(".sidebarOpen"),
-	  siderbarClose = document.querySelector(".siderbarClose");
-	  let getMode = localStorage.getItem("mode");
-		  if(getMode && getMode === "dark-mode"){
-			body.classList.add("dark");
-		  }
-	// js code to toggle dark and light mode
-	  modeToggle.addEventListener("click" , () =>{
-		modeToggle.classList.toggle("active");
-		body.classList.toggle("dark");
-		// js code to keep user selected mode even page refresh or file reopen
-		if(!body.classList.contains("dark")){
-			localStorage.setItem("mode" , "light-mode");
-		}else{
-			localStorage.setItem("mode" , "dark-mode");
-		}
-	  });
-	// js code to toggle search box
-		searchToggle.addEventListener("click" , () =>{
-		searchToggle.classList.toggle("active");
-	  });
-	
-	  
-	//   js code to toggle sidebar
-	sidebarOpen.addEventListener("click" , () =>{
-	nav.classList.add("active");
-	});
-	body.addEventListener("click" , e =>{
-	let clickedElm = e.target;
-	if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-		nav.classList.remove("active");
-	}
-	});
-	</script><br><br><br><hr>
-<header>
-	<div class="container">
-		<div class="left">
-			<h3>BILLING ADDRESS</h3>
-			<form>
-				Full name
-				<input type="text" name="" placeholder="Enter name">
-				Email
-				<input type="text" name="" placeholder="Enter email">
+   <nav>
+      <div class="nav-bar">
+          <i class='bx bx-menu sidebarOpen' ></i>
+          <span class="logonavLogo"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg" alt="logo"> </span>
+          
+          <div class="menu">
+              <div class="logo-toggle">
+                  <span class="logo"><a href="#"><img src="C:\Users\shrishti\OneDrive\Desktop\Starbucks\1 star.jpg"></a></span>
+                  <i class='bx bx-x siderbarClose'></i>
+              </div>
+              <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="payment.html">Payment</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="darkLight-searchBox">
+              <div class="dark-light">
+                  <i class='bx bx-moon moon'></i>
+                  <i class='bx bx-sun sun'></i>
+              </div>
+              <div class="searchBox">
+                 <div class="searchToggle">
+                  <i class='bx bx-x cancel'></i>
+                  <i class='bx bx-search search'></i>
+                 </div>
+                  <div class="search-field">
+                      <input type="text" placeholder="Search...">
+                      <i class='bx bx-search'></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <script>
+  const body = document.querySelector("body"),
+    nav = document.querySelector("nav"),
+    modeToggle = document.querySelector(".dark-light"),
+    searchToggle = document.querySelector(".searchToggle"),
+    sidebarOpen = document.querySelector(".sidebarOpen"),
+    siderbarClose = document.querySelector(".siderbarClose");
+    let getMode = localStorage.getItem("mode");
+        if(getMode && getMode === "dark-mode"){
+          body.classList.add("dark");
+        }
+  // js code to toggle dark and light mode
+    modeToggle.addEventListener("click" , () =>{
+      modeToggle.classList.toggle("active");
+      body.classList.toggle("dark");
+      // js code to keep user selected mode even page refresh or file reopen
+      if(!body.classList.contains("dark")){
+          localStorage.setItem("mode" , "light-mode");
+      }else{
+          localStorage.setItem("mode" , "dark-mode");
+      }
+    });
+  // js code to toggle search box
+      searchToggle.addEventListener("click" , () =>{
+      searchToggle.classList.toggle("active");
+    });
+  
+    
+  //   js code to toggle sidebar
+  sidebarOpen.addEventListener("click" , () =>{
+  nav.classList.add("active");
+  });
+  body.addEventListener("click" , e =>{
+  let clickedElm = e.target;
+  if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+      nav.classList.remove("active");
+  }
+  });
+  </script><br><br><br><hr>
 
-				Address
-				<input type="text" name="" placeholder="Enter address">
-				
-				City
-				<input type="text" name="" placeholder="Enter City">
-				<div id="zip">
-					<label>
-						State
-						<select>
-							<option>Choose State..</option>
-							<option>Rajasthan</option>
-							<option>Harayana</option>
-							<option>Uttar Pradesh</option>
-							<option>Madhya Pradesh</option>
-						</select>
-					</label>
-						<label>
-						Zip code
-						<input type="number" name="" placeholder="Zip code">
-					</label>
-				</div>
-			</form>
-		</div>
-		<div class="right">
-			<h3>PAYMENT</h3>
-			<form>
-				Accepted Card <br>
-				<img src="13 star.png" width="80" height="50">
-				<img src="14 star.png" width="85" height="50">
-				<br><br>
+<div class="container" data-aos="zoom-in"  data-aos-duration="1400"  data-aos-delay="200">
 
-				Credit card number
-			<input type="text" name="" placeholder="Enter card number">
-				
-				Exp month
-				<input type="text" name="" placeholder="Enter Month">
-				<div id="zip">
-					<label>
-						Exp year
-						<select>
-							<option>Choose Year..</option>
-							<option>2022</option>
-							<option>2023</option>
-							<option>2024</option>
-							<option>2025</option>
-						</select>
-					</label>
-						<label>
-						CVV
-						<input type="number" name="" placeholder="CVV">
-					</label>
-				</div>
-			</form>
-			<input type="submit" name="" value="Proceed to Checkout">
-		</div>
-	</div>
-</header>
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" placeholder="shrishti garg">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" placeholder="room - street - locality">
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" placeholder="Delhi">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" placeholder="India">
+                    </div>
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" placeholder="123 456">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                    <img src="13 star.png" alt="">
+                    <img src="14 star.png" alt="">
+                
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" placeholder="mrs. shrishti garg">
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444">
+                </div>
+                <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="text" placeholder="May">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="number" placeholder="2025">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="1234">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+
+    </form>
+
+</div>  
 <footer>
-	<div class="foot">
-		<div class="things">
-			<h3>About us</h3>
-			<ul>
-				<li>Our company</li>
-				<li>Heritage</li>
-				<li>coffee house</li>
-				
-			</ul>
-		</div>
-<div class="things">
-<h3>Quick links</h3>
-<ul>
-	<li>Delivery</li>
-	<li>Season's gifting</li>
-	<li>Costumer service</li>
-</ul>
-</div>
-<div class="things">
-<h3>Social Media</h3>
-<ul>
-	<li><i class="fa-brands fa-instagram"></i></li>
-	<li><i class="fa-brands fa-facebook"></i></li>
-	<li><i class="fa-brands fa-twitter"></i></li>
-</ul>
-</div>
-	</div>
+   <div class="footerContainer">
+       <div class="socialIcons">
+           <a href=""><i class="fa-brands fa-facebook"></i></a>
+           <a href=""><i class="fa-brands fa-instagram"></i></a>
+           <a href=""><i class="fa-brands fa-twitter"></i></a>
+           <a href=""><i class="fa-brands fa-google-plus"></i></a>
+           <a href=""><i class="fa-brands fa-youtube"></i></a>
+       </div>
+       </div>
+       <div class="footerBottom">
+         <p>Copyright &copy;2024; Designed by <span class="designer">shrishti</span></p>
+     </div>
+ </footer>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init({
+    offset:1,
+   });
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>  
+    
 </body>
 </html>
